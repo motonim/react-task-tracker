@@ -1,25 +1,67 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/Header"
+import Tasks from "./components/Tasks"
+import AddTask from "./components/AddTask"
+import Footer from "./components/Footer"
+import { useState } from "react"
 
 function App() {
+
+  const [showAddTask, setShowAddTask] = useState(false)
+
+  const [tasks, setTasks] = useState([
+    {
+    id: 1,
+    text: "Get Lush bath bombs",
+    day: " Mar 15th at 5:00pm",
+    reminder: false
+    },
+    {
+    id: 2,
+    text: "Change the air purifier filter",
+    day: "Mar 1st at 10:00am",
+    reminder: true
+    },
+    {
+    id: 3,
+    text: "Finish the book",
+    day: "Feb 28th at 11:59pm",
+    reminder: true
+    }
+   ])
+
+
+  // Add Task
+
+  function addTask(task) {
+    const id = Math.floor(Math.random()*10000) + 1
+    const newTask = { id, ...task }
+    setTasks([...tasks, newTask])
+
+  }
+
+
+  // Delete Task
+  function deleteTask(id) {
+    setTasks(tasks.filter((task) => task.id !== id))
+  }
+
+  // Toggle Reminder
+  function toggleReminder(id) {
+    setTasks(
+      tasks.map((task) => 
+        task.id === id ? { ...task, reminder: !task.reminder } : task
+      )
+    )
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <Header onAdd={() => setShowAddTask(!showAddTask)} showAdd={showAddTask} />
+      {showAddTask ? <AddTask onAdd={addTask} /> : null}
+      {tasks.length > 0 ? <Tasks tasks={tasks} onToggle={toggleReminder} onDelete={deleteTask}/> : "No tasks to show"}
+      <Footer />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
