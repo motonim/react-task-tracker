@@ -55,7 +55,7 @@ function App() {
   }
 
   return (
-    <div className="container">
+    <div className="container" style={{ userSelect: "none" }}>
       <Header onAdd={() => setShowAddTask(!showAddTask)} showAdd={showAddTask} />
       {showAddTask ? <AddTask onAdd={addTask} /> : null}
       {tasks.length > 0 ? <Tasks tasks={tasks} onToggle={toggleReminder} onDelete={deleteTask}/> : "No tasks to show"}

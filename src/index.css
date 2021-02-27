@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -12,7 +12,7 @@ body {
   color:#755515;
   height:91vh;
   align-items: center;
-  background-image: url(./components/Creativity-amico.svg);
+  background-image: url(./components/Creativity-amico-green.svg);
   background-size: 30vmin;
   background-position: bottom;
   background-repeat: no-repeat;
@@ -135,4 +135,21 @@ body {
 footer {
   margin-top: 30px;
   text-align: center;
+}
+
+.footerInfo {
+  margin-bottom: 20px;
+}
+
+.footerInfoTitle {
+  margin-bottom:10px;
+  font-weight: 600;
+
+}
+
+.footerInfoContent {
+  font-weight: 400;
+  text-align: left;
+  margin:0 auto;
+  width:72%;
 }
