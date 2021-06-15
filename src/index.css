@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -8,26 +10,31 @@
 
 body {
   font-family: 'Raleway', sans-serif;
-  background-color:#F2D184;
-  color:#755515;
-  height:91vh;
+  background-color: #f2d184;
+  color: #755515;
+  height: 100vh;
   align-items: center;
-  background-image: url(./components/Creativity-amico-green.svg);
-  background-size: 30vmin;
-  background-position: bottom;
-  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.amico {
+  display: block;
+  max-width: 70%;
+  margin: 30px auto 0;
 }
 
 .container {
   max-width: 500px;
-  margin: 150px auto 10px auto;
+  margin: 0 auto;
   overflow: auto;
   min-height: 300px;
   border: 1px outset #faf0f1;
   padding: 30px;
   border-radius: 5px;
-  background-color: #EFCDCF;
-  box-shadow: 5px 5px 15px #F29BAB;
+  background-color: #efcdcf;
+  box-shadow: 5px 5px 15px #f29bab;
 }
 
 .header {
@@ -42,13 +49,13 @@ body {
   align-items: center;
 }
 
-.header h1{
-  margin-left:0.6em;
+.header h1 {
+  margin-left: 0.6em;
 }
 
 .btn {
   display: inline-block;
-  background: #88C1C0;
+  background: #88c1c0;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -81,7 +88,7 @@ body {
 }
 
 .task.reminder {
-  border-left: 5px solid #88C1C0;
+  border-left: 5px solid #88c1c0;
 }
 
 .task h3 {
@@ -100,8 +107,8 @@ body {
 
 .form-control label {
   display: block;
-  margin-left:5px;
-  margin-bottom:5px
+  margin-left: 5px;
+  margin-bottom: 5px;
 }
 
 .form-control input {
@@ -127,10 +134,9 @@ body {
 .form-control-check input {
   /* flex: 2; */
   height: 20px;
-  margin:0;
-  width:30px;
+  margin: 0;
+  width: 30px;
 }
-
 
 footer {
   margin-top: 30px;
@@ -142,14 +148,13 @@ footer {
 }
 
 .footerInfoTitle {
-  margin-bottom:10px;
+  margin-bottom: 10px;
   font-weight: 600;
-
 }
 
 .footerInfoContent {
   font-weight: 400;
   text-align: left;
-  margin:0 auto;
-  width:72%;
+  margin: 0 auto;
+  width: 72%;
 }
